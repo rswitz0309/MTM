@@ -1,5 +1,5 @@
 import React from "react";
-import videoFile from "../assets/truck_vid_1.mp4"; // Replace with your video file path
+import videoFile from "../assets/truck_vid_2.mp4"; // Replace with your video file path
 
 const VideoBackground = () => {
     return (
