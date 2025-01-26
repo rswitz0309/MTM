@@ -1,0 +1,79 @@
+/* App Layout */
+.App {
+  margin: 0 auto;
+  background-image: url('Trucker.jpg'); /* Adjust path based on image location */
+  padding: 20px;
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #5a7fa7;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: rgb(154, 101, 101);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Page Headers */
+h1 {
+  font-size: 28px;
+  color: #5b7fda;
+  margin-bottom: 20px;
+}
+
+/* Vehicles Page */
+ul.vehicles-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.vehicles-list li {
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+ul.vehicles-list li strong {
+  color: #007BFF;
+}
+
+ul.vehicles-list li .status {
+  font-weight: bold;
+  color: #28A745;
+}
+
+ul.vehicles-list li .fuel {
+  font-weight: bold;
+  color: #FFC107;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+}
+
