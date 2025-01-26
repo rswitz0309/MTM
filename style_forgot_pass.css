@@ -2,7 +2,6 @@
     margin: 0;
     box-sizing: border-box; 
     font-family: 'Poppins', sans-serif;
-    
 }
 
 body {
@@ -10,40 +9,109 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: rgb(2, 40, 155); 
-    color: white;
-    font-size: 17px;
-   
-}
-input {
-    padding: 10px;
-    margin-top: 50px;
-    margin-left: 40px;
-    background: white;
-    border-radius: 10px;
-  
-    font-size: 13px;
-}
-h2 {
-    text-align: center;
-    margin-bottom: 100px;
-}
-button {
-    padding: 7px;
-    font-size: 20px;
-    border-color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-left: 40px;
+    min-height: 100vh;
+    background-color: rgb(2, 40, 155);
+    padding: 20px;
 }
 
-button:hover {
+.forgot-password-container {
     background: white;
-    color: #000;
-    outline: 1px solid #000;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    color: rgb(2, 40, 155);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 p {
-    margin-bottom: 50px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgb(2, 40, 155);
+}
+
+button {
+    background-color: rgb(2, 40, 155);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: rgb(1, 30, 116);
+}
+
+.back-link {
+    color: rgb(2, 40, 155);
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+#message {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.back-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(2, 40, 155);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(2, 40, 155, 0.1);
+}
+
+.back-button:hover {
+    background-color: rgb(2, 40, 155);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(2, 40, 155, 0.2);
+}
+
+.back-button i {
+    font-size: 18px;
 }

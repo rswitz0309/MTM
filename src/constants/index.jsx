@@ -9,10 +9,9 @@ import { GlobeLock } from "lucide-react";
 export const navItems = [
   { label: "Home", href: "#top"},
   { label: "Trucker Dashboard", href: "#" },
-  { label: "Company Dashboard", href: "#" },
-  { label: "Trucker Map", href: "#" },
+  { label: "Company Dashboard", href: "/company" },
+  { label: "Trucker Map", href: "truckermap.html" },
   { label: "About Us", href: "#" },
-  
 ];
 
 

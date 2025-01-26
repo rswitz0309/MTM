@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
 <head>
     <link rel="stylesheet" href="style_login.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
     <div class="the-container">
         <img src="trucker_logo.jpeg" alt="">
         <p id="message"></p>
-        <div class = "login-box">
-            <form action="#" method ="POST">
+        <div class="login-box">
+            <form action="#" method="POST">
                 <input type="text" id="truckerID" name="Trucker ID" required placeholder="Trucker ID">
                 <input type="password" id="password" required placeholder="Password">
                 <div class="options">
@@ -25,49 +27,52 @@
                 <button onclick="getInfo()">Login</button>
 
                 <p>Don't have an account? <a href="register.html" id="register">Register here</a></p>
-
-                
             </form>
         </div>
     </div>
     <script>
-        // Array of truckers' login credentials
+        // Combine existing truckers with registered users
         var objTruckers = [
-          { truckerID: "12321", password: "truck1" },
-          { truckerID: "12322", password: "truck2" },
-          { truckerID: "12323", password: "truck3" },
-          { truckerID: "12324", password: "truck4" },
-          { truckerID: "12325", password: "truck5" }
+            { truckerID: "40513272", password: "truck1", name: "John Doe" },
+            { truckerID: "40317095", password: "truck2", name: "Jane Smith" },
+            { truckerID: "45123212", password: "truck3", name: "Bob Brown" },
+            { truckerID: "45123213", password: "truck4", name: "Sarah Wilson" },
+            { truckerID: "45123214", password: "truck5", name: "Mike Johnson" }
         ];
-    
-        // Function to check the entered Trucker ID and Password
-        function getInfo() {
-          event.preventDefault();  
 
-          var truckerID = document.getElementById("truckerID").value;
-          var password = document.getElementById("password").value;
-          var messageElement = document.getElementById("message");
+        // Add registered users to login credentials
+        const registeredUsers = JSON.parse(localStorage.getItem('loginCredentials')) || [];
+        objTruckers = [...objTruckers, ...registeredUsers];
+
+        function getInfo() {
+            event.preventDefault();  
+
+            var truckerID = document.getElementById("truckerID").value;
+            var password = document.getElementById("password").value;
+            var messageElement = document.getElementById("message");
     
-          for (let i = 0; i < objTruckers.length; i++) {
-            if (truckerID == objTruckers[i].truckerID && password == objTruckers[i].password) {
-              messageElement.textContent = truckerID + " successfully logged in!";
-              messageElement.style.color = "green"; 
-              
-              // Store user info in localStorage
-              localStorage.setItem('loggedInUser', truckerID);
-              
-              // Redirect to main page after successful login
-              setTimeout(() => {
-                window.location.href = "/"; // Redirect to main page
-              }, 2000); 
-              return;
+            for (let i = 0; i < objTruckers.length; i++) {
+                if (truckerID == objTruckers[i].truckerID && password == objTruckers[i].password) {
+                    messageElement.textContent = `Welcome, ${objTruckers[i].name}!`;
+                    messageElement.style.color = "green"; 
+                    
+                    // Store user info in localStorage
+                    localStorage.setItem('loggedInUser', JSON.stringify({
+                        id: truckerID,
+                        name: objTruckers[i].name
+                    }));
+                    
+                    // Redirect to main page after successful login
+                    setTimeout(() => {
+                        window.location.href = "/"; 
+                    }, 2000); 
+                    return;
+                }
             }
-          }
-    
-          messageElement.textContent = "Incorrect trucker ID or password";
-          messageElement.style.color = "red"; 
+
+            messageElement.textContent = "Invalid Trucker ID or password";
+            messageElement.style.color = "red"; 
         }
-        document.getElementById("loginButton").addEventListener("click", getInfo);
     </script>
 </body>
 </html>
