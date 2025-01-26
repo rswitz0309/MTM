@@ -1,0 +1,25 @@
+/* Add this to vehicle.css */
+.vehicle-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .vehicle-table th, .vehicle-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .vehicle-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .details-container {
+    padding: 20px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  
