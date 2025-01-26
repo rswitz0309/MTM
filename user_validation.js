@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
 
   let errors =[]
 
-  if(firstname_input){
+  if(full_name_input){
     errors = getRegistrationErrors(full_name_input.value, TruckerID_input.value, email_input.value, password_input.value, confirm_Password_input.value)
   }
   else{
@@ -24,6 +24,7 @@ form.addEventListener('submit', (e) => {
 })
 
 function getRegistrationErrors(fullName, truckerID, email, password, confirmPassword){
+    event.preventDefault();
     let errors = []
 
     if(fullName === '' || fullName == null){
