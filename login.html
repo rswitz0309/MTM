@@ -52,9 +52,13 @@
             if (truckerID == objTruckers[i].truckerID && password == objTruckers[i].password) {
               messageElement.textContent = truckerID + " successfully logged in!";
               messageElement.style.color = "green"; 
-               // Redirect to a new page after successful login
+              
+              // Store user info in localStorage
+              localStorage.setItem('loggedInUser', truckerID);
+              
+              // Redirect to main page after successful login
               setTimeout(() => {
-              window.location.href = "https://example.com/dashboard"; // Replace with your desired URL
+                window.location.href = "/"; // Redirect to main page
               }, 2000); 
               return;
             }
